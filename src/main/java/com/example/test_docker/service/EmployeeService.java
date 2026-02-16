@@ -57,7 +57,7 @@ public class EmployeeService implements EmployeeServiceInterface{
             @CacheEvict(value = "employees", allEntries = true)
     })
     public String editEmployeeService(Employee employee, int empId) {
-        System.out.println("editing the employee");
+        System.out.println("editing the existing employee");
         empRepo.save(employee);
         return "Employee details updated successfully";
     }
