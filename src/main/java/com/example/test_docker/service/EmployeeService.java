@@ -35,6 +35,7 @@ public class EmployeeService implements EmployeeServiceInterface{
     @Override
     @CacheEvict(value = "employees", allEntries = true)
     public String createEmpService(Employee employee) {
+        System.out.println("Creating the new employee");
         empRepo.save(employee);
         return "Employee created successfully";
     }
@@ -45,6 +46,7 @@ public class EmployeeService implements EmployeeServiceInterface{
             @CacheEvict(value = "employees", allEntries = true)
     })
     public String deleteEmpService(int empId) {
+        System.out.println("deleting the employee");
         empRepo.deleteById(empId);
         return "Employee deleted successfully";
     }
@@ -55,6 +57,7 @@ public class EmployeeService implements EmployeeServiceInterface{
             @CacheEvict(value = "employees", allEntries = true)
     })
     public String editEmployeeService(Employee employee, int empId) {
+        System.out.println("editing the employee");
         empRepo.save(employee);
         return "Employee details updated successfully";
     }
